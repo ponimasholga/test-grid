@@ -108,23 +108,12 @@ h1 {
 
 .menu {
   display: grid;
-}
-
-.menu>ul {
-  display: grid;
+  align-items: center;
   gap: 62px;
-  margin: 0;
-  padding: 0;
   grid-template-columns: auto auto auto auto
 }
 
-.menu>ul>li {
-  list-style: none;
-  display: inline-grid;
-  align-items: center;
-}
-
-.menu>ul>li>a {
+.menu a {
   display: inline-grid;
   font-size: 24px;
   font-weight: 600;
@@ -132,18 +121,14 @@ h1 {
   text-decoration: none;
 }
 
-.menu-footer>ul {
+.menu-footer {
   display: grid;
   gap: 24px;
   margin: 0;
   padding: 0;
 }
 
-.menu-footer>ul>li {
-  list-style: none;
-}
-
-.menu-footer>ul>li>a {
+.menu-footer a {
   display: inline-grid;
   font-size: 20px;
   font-weight: 500;
@@ -153,10 +138,26 @@ h1 {
 
 
 .gallery {
-  display: grid;
+  /*display: grid;
   gap: 30px; 
   grid-template-columns: 1fr;
-  grid-template-rows: 361px 577px 1fr;
+  grid-template-rows: 361px 577px 1fr;*/
+  display: grid;
+  grid-gap: 30px; 
+  grid-template-columns: repeat(3, 3fr);
+}
+
+.gallery__item--2 {
+  grid-column: span 2;
+}
+
+.gallery__item--3 {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.gallery__item--6 {
+  grid-column: span 3;
 }
 
 .gallery__img {
@@ -166,27 +167,8 @@ h1 {
   display: block; 
 }
 
-.gallery__row {
-  display: grid;
-  gap: 30px; 
-  grid-template-columns: 1fr 2fr;
-}
-
 .gallery__item--middle {
   height: 361px;
-}
-
-.gallery__rowmiddle {
-  display: grid;
-  grid-template-columns:  956px auto;
-  column-gap: 30px;
-  row-gap: 20px;
-  grid-template-rows: 50% 50%;
-}
-
-.gallery__rowmega {
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 .gallery__item--big {
@@ -196,26 +178,9 @@ h1 {
 .gallery__item--small {
   height: 270px;
 }
-.gallery__item--3 {
-  grid-row: span 2;
-}
-
-.gallery__item--6 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 6;
-  grid-row-end: 9;
-
-  /** Alternative Syntax **/
-  /* grid-column: 5 / span 4; */
-  /* grid-row: 6 / span 3; */
-}
-
-
 
 .block {
   display: flex;
-
   width: 1920px;
   height: 1080px;
   border-radius: 20px;
@@ -419,6 +384,11 @@ h1 {
   z-index: 3;
 }
 
+.contact {
+  display: grid;
+  gap: 20px;
+}
+
 .contact__icon {
   display: grid;
   align-items: center;
@@ -430,7 +400,12 @@ h1 {
   align-items: center;
   gap: 18px;
   grid-template-columns: 22px auto;
-  margin-bottom: 20px;
+}
+
+.contact__listvalue {
+  display: grid;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .contact__value {
@@ -442,7 +417,7 @@ h1 {
 
 .contact__list {
   display: inline-grid;
-  gap: 5px;
+  gap: 20px;
 }
 
 .social {
@@ -458,13 +433,14 @@ h1 {
 }
 
 .subscription {
+  display: grid;
   width: 100%;
+  gap: 21px;
 }
 
 .subscription__title {
   font-size: 30px;
   color: #fff;
-  margin-bottom: 21px;
 }
 
 .subscription__form {
